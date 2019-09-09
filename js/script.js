@@ -11,6 +11,7 @@ let logOutBtn = document.getElementById("logoutBtn");
 let form = document.getElementsByClassName("form");
 let errorText = document.getElementsByClassName("error");
 
+//Om nameInp och passwordInp är korrekta
 function welcomeIn () {
     errorText[0].style.display = "none";
     form[0].style.display = "none";
@@ -22,6 +23,7 @@ if (localStorage.length != 0) {
     welcomeIn();
 }
 
+//När man klickar på Logga In knapp
 logInBtn.onclick = function () {
     name = nameInp.value;
     pass = passwordInp.value;
@@ -35,7 +37,7 @@ logInBtn.onclick = function () {
     
 }
 
-
+//När man klickar på Logga Ut knapp
 logOutBtn.onclick = function () {
     localStorage.clear();
     form[0].style.display = "block";
