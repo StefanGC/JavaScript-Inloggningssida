@@ -17,3 +17,13 @@ body {
   #login .container #login-row #login-column #login-box #login-form #register-link {
     margin-top: -85px;
   }
+
+  #login-in {
+    padding: 20px;
+  }
+    
+  .error {
+    color: red;
+    font-size: large;
+    font-style: italic;
+  }
