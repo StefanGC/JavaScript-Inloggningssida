@@ -11,15 +11,24 @@ let logOutBtn = document.getElementById("logoutBtn");
 let form = document.getElementsByClassName("form");
 let errorText = document.getElementsByClassName("error");
 
+function welcomeIn () {
+    errorText[0].style.display = "none";
+    form[0].style.display = "none";
+    form[1].style.display = "block";
+}
+
+//Om man är redan inloggad
+if (localStorage.length != 0) {
+    welcomeIn();
+}
 
 logInBtn.onclick = function () {
     name = nameInp.value;
     pass = passwordInp.value;
     
     if (name === correctName && pass === correctPassword) {
-        errorText[0].style.display = "none";
-        form[0].style.display = "none";
-        form[1].style.display = "block";
+        localStorage.setItem("Name", name);
+        welcomeIn();
     } else {
         errorText[0].style.display = "block";
     }
@@ -28,6 +37,7 @@ logInBtn.onclick = function () {
 
 
 logOutBtn.onclick = function () {
+    localStorage.clear();
     form[0].style.display = "block";
     form[1].style.display = "none";
 }
